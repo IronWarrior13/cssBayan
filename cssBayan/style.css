@@ -1,0 +1,159 @@
+.accordion-conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-title{
+    font-size: 1.5rem;
+    font-family: 'Yellowtail', cursive;
+    color: darkred;
+}
+
+label{
+    width: 100%;
+    text-align: inherit;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+    font-size: 1.0rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    border: 0.063rem darkred solid;
+    color: darkred;
+
+
+    cursor: pointer;
+    transition: .35s;
+}
+
+
+.lable-plus{
+    color: inherit;
+    content: '\002B';
+    float: right;
+    transition: .35s;
+    opacity: 0;
+}
+
+.wrapp-accordion > .accordion-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.accordion-content:active img {
+    opacity: .7;
+} 
+
+.accordion-content:active .lable-plus{
+    color: black;
+}
+
+.accordion-content:active .lable-text{
+    color: black;
+}
+.wrapp-accordion:hover label .lable-plus{
+    opacity: 3;
+}
+
+
+.wrapp-accordion:hover label{
+    border: .063rem beige solid;
+    background: darkred;
+    color: beige;
+}
+
+input{
+    display: none;
+}
+
+input:checked + label{
+    background: darkred;
+    color: beige;
+}
+
+input:checked + label span{
+    transform: rotate(45deg);
+}
+
+input:checked + label + .content-conteiner{
+    height: 10rem;
+}
+
+.content-conteiner{
+    width: 100%;
+    height: 0rem;
+    cursor: pointer;
+    transition: .35s;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: 0.45em;
+    transition: .35s;
+}
+
+@media (min-width: 325px) {    
+    .header-title{
+        font-size: 2.5rem;
+        font-family:   'Yellowtail', cursive;
+    }
+
+    label{
+        font-size: 1.5em;
+        width: 100%;
+    }
+
+    .content-conteiner{
+        width: 100%;
+        height: 0rem;
+    }
+
+    .wrapp-accordion{
+        width: 70%;
+    }
+
+    input:checked + label + .content-conteiner{
+        height: 20rem;
+    }
+
+    .accordion-content:hover > .content-conteiner{
+        height: 20rem;
+    }
+    .accordion-content:hover > label >  span{
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 825px){
+    .header-title{
+        font-size: 3.0rem;
+        font-family:   'Yellowtail', cursive;
+    }
+
+    label{
+        font-size: 2.0em;
+        width: 100%;
+    }
+
+    .content-conteiner{
+        width: 100%;
+        height: 0rem;
+    }
+
+    .wrapp-accordion{
+        width: 45%;
+    }
+
+    input:checked + label + .content-conteiner{
+        height: 30rem;
+    }
+
+    .accordion-content:hover > .content-conteiner{
+        height: 30rem;
+    }
+}
