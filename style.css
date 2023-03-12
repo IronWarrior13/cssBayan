@@ -37,21 +37,41 @@ label::before{
     flex-direction: column;
     align-items: center;
 
-    width: 50%;
+    width: 45%;
 }
 
 .wrapp:hover label::before{
     opacity: 3;
 }
 
+.wrapp:hover label{
+    border: .063rem beige solid;
+    background: darkred;
+    color: beige;
+}
+
 input{
     display: none;
 }
 
+input:checked + label{
+    background: darkred;
+    color: beige;
+}
+
+input:checked + label::before{
+    transform: rotate(45deg);
+}
+
+input:checked + label + .content-conteiner{
+    height: 30rem;
+}
+
 .content-conteiner{
     width: 100%;
-    height: 30rem;
+    height: 0rem;
     cursor: pointer;
+    transition: .35s;
 }
 
 img{
@@ -75,12 +95,17 @@ img{
 
     .content-conteiner{
         width: 100%;
-        height: 20rem;
+        height: 0rem;
     }
 
     .wrapp{
         width: 70%;
     }
+
+    input:checked + label + .content-conteiner{
+        height: 20rem;
+    }
+    
 }
 
 @media (max-width: 320px){
@@ -96,10 +121,15 @@ img{
 
     .content-conteiner{
         width: 100%;
-        height: 10rem;
+        height: 0rem;
     }
 
     .wrapp{
         width: 90%;
     }
+
+    input:checked + label + .content-conteiner{
+        height: 10rem;
+    }
+    
 }
